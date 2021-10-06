@@ -12,7 +12,7 @@ library.add(faPlus);
 function App() {
 
    
-    let [id, setId] = useState(3);
+    let [id, setId] = useState(1);
     const [viewmodal, setViewmodal] = useState(false);
     const [todayLists, setTodayList] = useState([]);
     let nowDate =  moment().format("YYYY년 MM월 DD일")
@@ -22,17 +22,22 @@ function App() {
     function modalToggle(){
         setViewmodal(!viewmodal);
     }
-    function addList( text ){
+    function insertList( text ){
         const temp = {id: id, work: text};
-        console.log(temp);
         setTodayList([...todayLists, temp]);
         const newId = id+1;
         setId(newId);
     }
+    function deleteList(id){
+        console.log(id);
+        setTodayList( todayLists.filter( todayList=>{
+            return todayList.id !== id
+        }));
+    }
 
     //select
     const renderWork = todayLists.length? todayLists.map( todayList =>{
-        return  <WorkList todayList={todayList} key={todayList.id}/>
+        return  <WorkList todayList={todayList} deleteList={deleteList} key={todayList.id}/>
     }) : <h3 >오늘 일정이 없습니다</h3>
     return (
     <div className="App">
@@ -50,7 +55,7 @@ function App() {
         </div>
         <Modal 
             visible={viewmodal} 
-            addList={addList}
+            insertList={insertList}
             modalToggle = {modalToggle}
         />
     </div>

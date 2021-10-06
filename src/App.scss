@@ -6,7 +6,17 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(181, 206, 228);
-
+    .main__header{
+        h1 {
+            font-size: 1.5vw;
+            font-family: "NeoB";
+        }
+        h5 {
+            font-size: 0.9vw;
+            font-family: "NeoM";
+            color: #C7C7C7;
+        }
+    }
     .main-inner {
         position: relative;
         padding: 1.5vw;
@@ -15,13 +25,12 @@
         border-radius: 0.6vw;
         background-color: white;
         box-shadow: 10px 10px 3px -3px #c7c7c7;
-  
+    
         .main__content {
             display: flex;
             margin-bottom: 0.2vw;
-            align-items: center;
-            .times-circle{
-              
+            .faTimesCircle{
+                height: 1.2vw;
                 width: 1.2vw;
                 color: #2e8cf8;
             }
@@ -41,11 +50,7 @@
 
         }
 
-        h1 {
-            font-size: 1.5vw;
-            font-family: "NeoB";
-        }
-
+    
         h3 {
             width: 19vw;;
             font-size: 1.1vw;
@@ -53,11 +58,7 @@
 
         }
 
-        h5 {
-            font-size: 0.9vw;
-            font-family: "NeoM";
-            color: #C7C7C7;
-        }
+     
 
         p {
             margin-top: 1vw;
