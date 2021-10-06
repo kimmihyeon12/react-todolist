@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 
 function Modal({visible,insertList,modalToggle}){
     const [text, setText] = useState('');
-    console.log(modalToggle);
     function onsubmit(){
         modalToggle();
         insertList(text);
